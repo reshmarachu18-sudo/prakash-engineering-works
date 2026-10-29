@@ -24,3 +24,97 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Hero text fades in */
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hero heading moves upward */
+@keyframes hero-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background photo gently zooms out */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-hero-fade {
+  animation: hero-fade 0.8s ease-out both;
+}
+
+.animate-hero-up {
+  animation: hero-up 0.9s ease-out 0.15s both;
+}
+
+.animate-hero-up-delay {
+  animation: hero-up 0.9s ease-out 0.35s both;
+}
+
+.animate-hero-up-later {
+  animation: hero-up 0.9s ease-out 0.55s both;
+}
+
+.animate-hero-fade-later {
+  animation: hero-fade 1s ease-out 0.8s both;
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom 2s ease-out both;
+}
+
+/* Respect visitors who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-fade,
+  .animate-hero-up,
+  .animate-hero-up-delay,
+  .animate-hero-up-later,
+  .animate-hero-fade-later,
+  .animate-hero-zoom {
+    animation: none;
+  }
+}
+
+@keyframes team-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-team-heading {
+  animation: team-fade-up 0.8s ease-out both;
+}
+
+.animate-team-card {
+  animation: team-fade-up 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-team-heading,
+  .animate-team-card {
+    animation: none;
+  }
+}
+
